@@ -1,0 +1,6 @@
+@SeventeenAPI_HostAddress = http://localhost:5286
+
+GET {{SeventeenAPI_HostAddress}}/seventeen/
+Accept: application/json
+
+###
