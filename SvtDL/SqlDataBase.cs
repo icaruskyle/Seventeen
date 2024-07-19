@@ -8,7 +8,8 @@ namespace SvtDL
     public class SqlDataBase
     {
             string connectionString
-            = "Data Source =KYLE-BOOK19\\SQLEXPRESS; Initial Catalog = Seventeen;Integrated Security = True;";
+              = "Server = tcp:20.198.176.130,1433; Database = Seventeen; User Id = sa; Password = integ2!";
+           // = "Data Source =KYLE-BOOK19\\SQLEXPRESS; Initial Catalog = Seventeen;Integrated Security = True;";
 
             SqlConnection sqlConnection;
 
