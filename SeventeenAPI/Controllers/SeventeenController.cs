@@ -21,15 +21,15 @@ namespace SeventeenAPI.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<SeventeenAPI.Seventeen> GetDiscography()
+        public IEnumerable<SeventeenAPI.Discography> GetDiscography()
         {
             var Discography = _getServices.GetAllDiscography();
 
-            List<SeventeenAPI.Seventeen> cont = new List<SeventeenAPI.Seventeen>();
+            List<SeventeenAPI.Discography> cont = new List<SeventeenAPI.Discography>();
 
             foreach (var discography in Discography)
             {
-                cont.Add(new SeventeenAPI.Seventeen { Albumtype = discography.Albumtype, Title = discography.Title });
+                cont.Add(new SeventeenAPI.Discography { Albumtype = discography.Albumtype, Title = discography.Title });
             }
             return cont;
         }
@@ -48,8 +48,23 @@ namespace SeventeenAPI.Controllers
             return new JsonResult(result);
 
         }
+        [HttpDelete]
+        public JsonResult DeleteDiscograhy(SeventeenAPI.Discography request)
+        {
+
+            var delete = new Carat.Discography
+            {
+                Albumtype = request.Albumtype
+
+            };
+
+            var result = _transactionServices.DeleteDiscography(delete);
+
+            return new JsonResult(result);
+        }
 
     }
 
 
 }
+       
