@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SvtDL", "SvtDL\SvtDL.csproj
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carat", "Carat\Carat.csproj", "{45F2DF14-62F7-43D4-9329-0780F67A369D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeventeenAPI", "SeventeenAPI\SeventeenAPI.csproj", "{853F612F-970B-4E90-BBB3-0905EDF135A5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeventeenAPI", "SeventeenAPI\SeventeenAPI.csproj", "{853F612F-970B-4E90-BBB3-0905EDF135A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

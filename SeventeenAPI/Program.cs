@@ -1,15 +1,26 @@
+using SvtBL;
+using Amazon.S3;
+using Amazon.Runtime;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add AWS service configuration from appsettings.json
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
 
+// Add AWS S3 service
+builder.Services.AddAWSService<IAmazonS3>();
+
+// Register S3Services
+builder.Services.AddSingleton<S3Services>();
+
+// Add controllers and Swagger
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Enable Swagger UI for development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -17,9 +28,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();
